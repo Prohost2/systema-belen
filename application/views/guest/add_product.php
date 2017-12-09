@@ -469,7 +469,7 @@
 				  	</div>
 				  	<div class="tab-pane fade show" id="pills-dimensions" role="tabpanel" aria-labelledby="pills-dimensions-tab">
 				  		<div class="container">
-						<div class="fondo" style=" padding: 20px">
+						<div class="fondo" style="background-color: rgba(25,67,45,0.5); padding: 20px">
 					  		<div class="row">
 					  			<div class="col-md-4">
 					  				<h5 class="text-center">INDIVIDUAL PRODUCT DIMENSION</h5>
@@ -500,13 +500,13 @@
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" class="form-control" id="masa_n" name="">
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT UNIT OF MEASURE</label>
-				  					<select name="" id="" ng-model="peso" class="form-control">
-				  							<option value="GR">GR</option>
-				  							<option value="KG">KG</option>		  						
+				  					<select name="" id="peso" class="form-control masa">
+				  							<option value="gr">Gr</option>
+				  							<option value="kg">Kg</option>		  						
 				  					</select>
 				  				</div>
 				  			</div>
@@ -538,77 +538,178 @@
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" class="form-control" id="masa_a" name="">
 				  					</div>
 				  				<div class="col-md-3">
-				  					<label for="">WEIGHT UNIT OF MEASURE</label>
-				  					<select name="" id="" class="form-control">
-				  							<option value="GR">GR</option>
-				  							<option value="KG">KG</option>		  						
-				  					</select>
-				  				</div>
+				  					<label for="">UNIT OF MEASURE</label>
+									    <select name="" id="carga" class="masa form-control">
+									      <option value="lb">Lb</option>
+									      <option value="oz">Oz</option>
+									    </select>
+				  					</div>
 				  			</div>
 						</div>
 							<!--  Imperial Sistema -->
-				  			<div>
+				  			<div style="background-color: rgba(29,102,37,.7); padding: 20px">
+<div>
 				  				<hr>
 				  			</div>
 				  			<h5>INDIVIDUAL PRODUCT PACKING DIMENSION</h5>
-				  			<div class="row">
-				  				
-				  				<div class="col-md-3">
-				  					<label for="">LENGTH</label>
-				  						<input type="text" class="form-control" name="">
-				  					</div>
-				  				<div class="col-md-3">
-				  					<label for="">HEIGHT</label>
-				  						<input type="text" class="form-control" name="">
-				  					</div>
-				  				<div class="col-md-3">
-				  					<label for="">WIDTH</label>
-				  						<input type="text" class="form-control" name="">
-				  					</div>
-				  				<div class="col-md-3">
-				  					<label for="">UNIT OF MEASURE</label>
-				  						<input type="text" class="form-control" name="">
-				  					</div>
-				  				<div class="col-md-3">
-				  					<label for="">WEIGHT</label>
-				  						<input type="text" class="form-control" name="">
-				  					</div>
-				  				<div class="col-md-3">
-				  					<label for="">UNIT OF MEASURE</label>
-				  						<input type="text" class="form-control" disabled="">
-				  					</div>
-				  			</div>
 				  			<div>
 				  				<hr>
 				  			</div>
-				  			<h5>MASTER CARTON DIMENSION</h5>
+				  		<!-- Sistema de medidas Comunes -->
 				  			<div class="row">
 				  				<div class="col-md-3">
 				  					<label for="">LENGTH</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" id="lg_p" class="form-control" name="" >
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">HEIGHT</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" id="a_p" class="form-control" name="" >
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WIDTH</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" id="an_p" class="form-control" name="">
 				  					</div>
 				  				<div class="col-md-3">
-				  					<label for="">UNIT OF MEASURE</label>
-				  						<input type="text" class="form-control" name="">
+				  					<label for="">LENGTH UNIT OF MEASURE</label>
+				  						<select name="" id="valor_p" class="form-control modelo_p">
+				  							<option value="m">M</option>
+				  							<option value="cm">CM</option>
+				  							<option value="mm">MM</option>
+				  						</select>
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT</label>
-				  						<input type="text" class="form-control" name="">
+				  						<input type="text" class="form-control" id="masa_n_p" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT UNIT OF MEASURE</label>
+				  					<select name="" id="peso_p" class="form-control masa_p">
+				  							<option value="gr">Gr</option>
+				  							<option value="kg">Kg</option>		  						
+				  					</select>
+				  				</div>
+				  			</div>
+				  			<!-- Funciones para medidas imperiales -->
+					  		<div class="row">
+					  			<div class="col-md-4">
+					  				<p class="text-center"> IMPERIAL SYSTEM</p>
+					  			</div>
+					  		</div>
+				  			<div class="row">
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH</label>
+				  						<input type="text" class="form-control" id="lg_v_p" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">HEIGHT</label>
+				  						<input type="text" class="form-control" id="a_v_p" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WIDTH</label>
+				  						<input type="text" class="form-control" id="an_v_p" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH UNIT OF MEASURE</label>
+				  						<select name="" id="imp_p" class="form-control modelo_p">
+				  							<option value="in">In</option>
+				  							<option value="ft">Ft</option>
+				  						</select>
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT</label>
+				  						<input type="text" class="form-control" id="masa_a_p" name="">
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">UNIT OF MEASURE</label>
-				  						<input type="text" class="form-control" name="CM" disabled="">
+									    <select name="" id="carga_p" class="masa_p form-control">
+									      <option value="lb">Lb</option>
+									      <option value="oz">Oz</option>
+									    </select>
+				  					</div>
+				  			</div>	
+				  			</div>
+
+
+
+
+
+
+				  			<!-- -->
+				  			<h5>MASTER CARTON DIMENSION</h5>
+				  			<div class="row">
+				  		<!-- Sistema de medidas Comunes -->
+				  			<div class="row">
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH</label>
+				  						<input type="text" id="lg_c" class="form-control" name="" >
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">HEIGHT</label>
+				  						<input type="text" id="a_c" class="form-control" name="" >
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WIDTH</label>
+				  						<input type="text" id="an_c" class="form-control" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH UNIT OF MEASURE</label>
+				  						<select name="" id="valor_c" class="form-control modelo_c">
+				  							<option value="m">M</option>
+				  							<option value="cm">CM</option>
+				  							<option value="mm">MM</option>
+				  						</select>
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT</label>
+				  						<input type="text" class="form-control" id="masa_n_c" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT UNIT OF MEASURE</label>
+				  					<select name="" id="peso_c" class="form-control masa_c">
+				  							<option value="gr">Gr</option>
+				  							<option value="kg">Kg</option>		  						
+				  					</select>
+				  				</div>
+				  			</div>
+				  			<!-- Funciones para medidas imperiales -->
+					  		<div class="row">
+					  			<div class="col-md-4">
+					  				<p class="text-center"> IMPERIAL SYSTEM</p>
+					  			</div>
+					  		</div>
+				  			<div class="row">
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH</label>
+				  						<input type="text" class="form-control" id="lg_v_c" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">HEIGHT</label>
+				  						<input type="text" class="form-control" id="a_v_c" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WIDTH</label>
+				  						<input type="text" class="form-control" id="an_v_c" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH UNIT OF MEASURE</label>
+				  						<select name="" id="imp_c" class="form-control modelo_c">
+				  							<option value="in">In</option>
+				  							<option value="ft">Ft</option>
+				  						</select>
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT</label>
+				  						<input type="text" class="form-control" id="masa_a_c" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">UNIT OF MEASURE</label>
+									    <select name="" id="carga_c" class="masa_c form-control">
+									      <option value="lb">Lb</option>
+									      <option value="oz">Oz</option>
+									    </select>
 				  					</div>
 				  			</div>
 				  			<div>
@@ -616,6 +717,7 @@
 				  			</div>
 				  		</div>
 				  	</div>
+				 </div>
 				 <!-- End Of Tab Dimensions -->
 				  	<div class="tab-pane fade show" id="pills-chart" role="tabpanel" aria-labelledby="pills-chart-tab">
 				  		<div class="container">
@@ -824,7 +926,7 @@
 				  				</div>
 				  			</div>
 				  			<div class="row">
-				  				<div class="col-3"><img src="<?php echo base_url('asset/img/faces/') ?>{{Swatch}}" class="img-fluid" alt=""></div>
+				  				<div class="col-3"><img src="{{ruta}}{{Swatch}}" class="img-fluid" alt=""></div>
 				  			</div>
 				  			<div class="row">
 				  				<div class="col-3">

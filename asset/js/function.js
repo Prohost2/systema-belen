@@ -128,6 +128,74 @@ $("#upc_13").easyAutocomplete(options);
                   $('#an_v').val($('#an').val()*0.00328);                  
                 }
 
+        });  
+
+        $('.masa').change(function(event) {
+          if ($('#peso').val() == "gr" && $('#carga').val() == "lb") 
+            {
+              $('#masa_a').val($('#masa_n').val()*0.0022046); 
+            }else if ($('#peso').val() == "gr" && $('#carga').val() == "oz") 
+              {
+                $('#masa_a').val($('#masa_n').val()*0.03527);
+              }else if ($('#peso').val() == "kg" && $('#carga').val() == "lb") 
+            {
+              $('#masa_a').val($('#masa_n').val()*35.274); 
+            }else if ($('#peso').val() == "kg" && $('#carga').val() == "oz") 
+              {
+                $('#masa_a').val($('#masa_n').val()*2.204);
+              }
+        });
+
+        // Sección de dimesionels por paquete de Caja
+
+        $(".modelo_p").change(function(event) {
+
+          if ($('#valor_p').val() == "m" && $('#imp_p').val() == "in") 
+            {
+                $('#lg_v_p').val($('#lg_p').val()*39.370);
+                $('#a_v_p').val($('#a_p').val()*39.370);
+                $('#an_v_p').val($('#an_p').val()*39.370);
+              }else if($('#valor_p').val() == "cm" && $('#imp_p').val() == "in"){
+
+                  $('#lg_v_p').val($('#lg_p').val()*0.3937);
+                  $('#a_v_p').val($('#a_p').val()*0.3937);
+                  $('#an_v_p').val($('#an_p').val()*0.3937);            
+
+                }else if($('#valor_p').val() == "mm" && $('#imp_p').val() == "in"){
+                  $('#lg_v_p').val($('#lg_p').val()*0.03937);
+                  $('#a_v_p').val($('#a_p').val()*0.03937);
+                  $('#an_v_p').val($('#an_p').val()*0.03937); 
+
+                }else if($('#valor_p').val() == "m" && $('#imp_p').val() == "ft"){
+                  $('#lg_v_p').val($('#lg_p').val()*3.280);
+                  $('#a_v_p').val($('#a_p').val()*3.280);
+                  $('#an_v_p').val($('#an_p').val()*3.280);                  
+                }else if($('#valor_p').val() == "cm" && $('#imp_p').val() == "ft"){
+                  $('#lg_v_p').val($('#lg_p').val()*0.03280);
+                  $('#a_v_p').val($('#a').val()*0.03280);
+                  $('#an_v_p').val($('#an_p').val()*0.03280);                  
+                }else if($('#valor_p').val() == "mm" && $('#imp_p').val() == "ft"){
+                  $('#lg_v_p').val($('#lg_p').val()*0.00328);
+                  $('#a_v_p').val($('#a_p').val()*0.00328);
+                  $('#an_v_p').val($('#an_p').val()*0.00328);                  
+                }
+
+        });  
+
+        $('.masa_p').change(function(event) {
+          if ($('#peso_p').val() == "gr" && $('#carga_p').val() == "lb") 
+            {
+              $('#masa_a_p').val($('#masa_n_p').val()*0.0022046); 
+            }else if ($('#peso_p').val() == "gr" && $('#carga_p').val() == "oz") 
+              {
+                $('#masa_a_p').val($('#masa_n_p').val()*0.03527);
+              }else if ($('#peso_p').val() == "kg" && $('#carga_p').val() == "lb") 
+            {
+              $('#masa_a_p').val($('#masa_n_p').val()*35.274); 
+            }else if ($('#peso_p').val() == "kg" && $('#carga_p').val() == "oz") 
+              {
+                $('#masa_a_p').val($('#masa_n_p').val()*2.204);
+              }
         });    
 
   });
