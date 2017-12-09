@@ -469,37 +469,38 @@
 				  	</div>
 				  	<div class="tab-pane fade show" id="pills-dimensions" role="tabpanel" aria-labelledby="pills-dimensions-tab">
 				  		<div class="container">
-						<div class="fondo" style="background-color: rgba(28,168,186,.6); padding: 20px">
-				  		<div class="row">
-				  			<div class="col-md-4">
-				  				<h5 class="text-center">INDIVIDUAL PRODUCT DIMENSION</h5>
-				  				<p class="text-center"> METRIC SYSTEM</p>
-				  			</div>
-				  		</div>
+						<div class="fondo" style=" padding: 20px">
+					  		<div class="row">
+					  			<div class="col-md-4">
+					  				<h5 class="text-center">INDIVIDUAL PRODUCT DIMENSION</h5>
+					  				<p class="text-center"> METRIC SYSTEM</p>
+					  			</div>
+					  		</div>
+				  		<!-- Sistema de medidas Comunes -->
 				  			<div class="row">
 				  				<div class="col-md-3">
 				  					<label for="">LENGTH</label>
-				  						<input type="text" class="form-control" name="" ng-model="length">
+				  						<input type="text" id="lg" class="form-control" name="" >
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">HEIGHT</label>
-				  						<input type="text" class="form-control" name="" ng-model="height">
+				  						<input type="text" id="a" class="form-control" name="" >
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WIDTH</label>
-				  						<input type="text" class="form-control" name="" ng-model="width">
+				  						<input type="text" id="an" class="form-control" name="">
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">LENGTH UNIT OF MEASURE</label>
-				  						<select name="" id="" ng-model="Option" class="form-control">
-				  							<option value="METER">M</option>
-				  							<option value="CENTIMETER">CM</option>
-				  							<option value="MILIMETRE">MM</option>
+				  						<select name="" id="valor" class="form-control modelo">
+				  							<option value="m">M</option>
+				  							<option value="cm">CM</option>
+				  							<option value="mm">MM</option>
 				  						</select>
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT</label>
-				  						<input type="text" class="form-control" ng-model="medida" name="">
+				  						<input type="text" class="form-control" name="">
 				  					</div>
 				  				<div class="col-md-3">
 				  					<label for="">WEIGHT UNIT OF MEASURE</label>
@@ -509,230 +510,46 @@
 				  					</select>
 				  				</div>
 				  			</div>
-		<!--  Imperial Sistema -->
-				  		<div class="row">
-				  			<div class="col-md-4">
-				  				<h5 class="text-center">INDIVIDUAL PRODUCT DIMENSION</h5>
-				  				<p class="text-center"> IMPERIAL SYSTEM</p>
-				  			</div>
-				  		</div>
+				  			<!-- Funciones para medidas imperiales -->
+					  		<div class="row">
+					  			<div class="col-md-4">
+					  				<p class="text-center"> IMPERIAL SYSTEM</p>
+					  			</div>
+					  		</div>
 				  			<div class="row">
-								<div ng-switch="Option" class="col-md-12">
-									<div class="row">
-									<div ng-switch-when="METER" class="col-md-12">
-										<!-- Primera option metros a pulgadas -->
-										<div class="row">
-											<div ng-switch="Imperial" class="col-md-12">
-												<div class="row" ng-switch-when="In">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 39.3701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 39.3701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 39.3701}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											<div ng-switch-when="Ft" class="col-md-12">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 3.280841666667}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 3.280841666667}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 3.280841666667}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											</div>
-										</div>
-											 <div class="col-md-3">
-											  	<label for="">UNIT OF MEASURE</label>
-											  		<select name="" id="" ng-model="Imperial" class="form-control">
-											  			<option value="In">In</option>
-											  			<option value="Ft">Ft</option>
-											  		</select>
-											  </div>												
-								  				<div class="col-md-3">
-								  					<label for="">WEIGHT</label>
-								  						<div ng-switch="peso">
-								  							<div ng-switch-when="GR">
-								  								<div ng-switch="Pesasado">
-								  									<div class="row">
-								  										<div ng-switch-when="Oz" >
-								  											<div class="col-md-12">
-								  											<input type="text" value="{{medida * 35274}}" class="form-control">
-								  											</div>
-								  										</div>
-								  									</div>
-																	<div class="row">
-																		<div ng-switch-when="Lb">
-																			<div class="col-md-12">
-																				<input type="text" value="{{medida * 0,00220462}}" class="form-control">
-																			</div>
-									  									</div>
-																	</div>
-								  								</div>
-								  							</div>
-								  						</div>
-								  					</div>
-								  				<div class="col-md-3">
-								  					<label for="">WEIGTH UNIT OF MEASURE</label>
-								  						<select name="" id="" ng-model="Pesasado" class="form-control">
-								  							<option value="Oz">OZ</option>
-								  							<option value="Lb">LB</option>
-								  						</select>
-								  					</div>											
-										</div>								
-									</div>	
-									<!--Fin Primera Opcion de Metros a Pulgaas -->	
-									<div ng-switch-when="CENTIMETER" class="col-md-12">
-										<!-- Primera option metros a pulgadas -->
-										<div class="row">
-											<div ng-switch="Imperial" class="col-md-12">
-												<div class="row" ng-switch-when="In">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 0.393701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 0.393701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 0.393701}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											<div ng-switch-when="Ft" class="col-md-12">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 0.032808}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 0.032808}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 0.032808}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											</div>
-										</div>
-											  				<div class="col-md-3">
-											  					<label for="">UNIT OF MEASURE</label>
-											  						<select name="" id="" ng-model="Imperial" class="form-control">
-											  							<option value="In">In</option>
-											  							<option value="Ft">Ft</option>
-											  						</select>
-											  					</div>												
-								  				<div class="col-md-3">
-								  					<label for="">WEIGHT</label>
-								  						<input type="text" class="form-control" name="">
-								  					</div>
-								  				<div class="col-md-3">
-								  					<label for="">WEIGTH UNIT OF MEASURE</label>
-								  						<select name="" id="" ng-model="Imperial" class="form-control">
-								  							<option value="">OZ</option>
-								  							<option value="">LB</option>
-								  						</select>
-								  					</div>											
-										</div>								
-									</div>	
-									<!-- Fin primera opcion de centimetros a pulgadas  -->
-									<div ng-switch-when="MILIMETRE" class="col-md-12">
-										<!-- Primera option metros a pulgadas -->
-										<div class="row">
-											<div ng-switch="Imperial" class="col-md-12">
-												<div class="row" ng-switch-when="In">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 0.0393701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 0.0393701}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 0.0393701}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											<div ng-switch-when="Ft" class="col-md-12">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="row">
-											  				<div class="col-md-3">
-											  					<label for="">LENGTH</label>
-											  						<input type="text" class="form-control" value="{{length * 0.0032808}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">HEIGHT</label>
-											  						<input type="text" class="form-control" value="{{height * 0.0032808}}" name="">
-											  					</div>
-											  				<div class="col-md-3">
-											  					<label for="">WIDTH</label>
-											  						<input type="text" class="form-control" value="{{width * 0.0032808}}" name="">
-											  					</div>															
-														</div>
-													</div>													
-												</div>
-											</div>
-										</div>
-											  				<div class="col-md-3">
-											  					<label for="">UNIT OF MEASURE</label>
-											  						<select name="" id="" ng-model="Imperial" class="form-control">
-											  							<option value="In">In</option>
-											  							<option value="Ft">Ft</option>
-											  						</select>
-											  					</div>												
-								  				<div class="col-md-3">
-								  					<label for="">WEIGHT</label>
-								  						<input type="text" class="form-control" name="">
-								  					</div>
-								  				<div class="col-md-3">
-								  					<label for="">WEIGTH UNIT OF MEASURE</label>
-								  						<select name="" id="" ng-model="Imperial" class="form-control">
-								  							<option value="">OZ</option>
-								  							<option value="">LB</option>
-								  						</select>
-								  					</div>											
-										</div>								
-									</div>									
-									</div>
-								</div>
-				  			</div>							
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH</label>
+				  						<input type="text" class="form-control" id="lg_v" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">HEIGHT</label>
+				  						<input type="text" class="form-control" id="a_v" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WIDTH</label>
+				  						<input type="text" class="form-control" id="an_v" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">LENGTH UNIT OF MEASURE</label>
+				  						<select name="" id="imp" class="form-control modelo">
+				  							<option value="in">In</option>
+				  							<option value="ft">Ft</option>
+				  						</select>
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT</label>
+				  						<input type="text" class="form-control" name="">
+				  					</div>
+				  				<div class="col-md-3">
+				  					<label for="">WEIGHT UNIT OF MEASURE</label>
+				  					<select name="" id="" class="form-control">
+				  							<option value="GR">GR</option>
+				  							<option value="KG">KG</option>		  						
+				  					</select>
+				  				</div>
+				  			</div>
 						</div>
+							<!--  Imperial Sistema -->
 				  			<div>
 				  				<hr>
 				  			</div>

@@ -96,6 +96,40 @@ $("#upc_13").easyAutocomplete(options);
 
 });
 
+        $(".modelo").change(function(event) {
+
+          if ($('#valor').val() == "m" && $('#imp').val() == "in") 
+            {
+                $('#lg_v').val($('#lg').val()*39.370);
+                $('#a_v').val($('#a').val()*39.370);
+                $('#an_v').val($('#an').val()*39.370);
+              }else if($('#valor').val() == "cm" && $('#imp').val() == "in"){
+
+                  $('#lg_v').val($('#lg').val()*0.3937);
+                  $('#a_v').val($('#a').val()*0.3937);
+                  $('#an_v').val($('#an').val()*0.3937);            
+
+                }else if($('#valor').val() == "mm" && $('#imp').val() == "in"){
+                  $('#lg_v').val($('#lg').val()*0.03937);
+                  $('#a_v').val($('#a').val()*0.03937);
+                  $('#an_v').val($('#an').val()*0.03937); 
+
+                }else if($('#valor').val() == "m" && $('#imp').val() == "ft"){
+                  $('#lg_v').val($('#lg').val()*3.280);
+                  $('#a_v').val($('#a').val()*3.280);
+                  $('#an_v').val($('#an').val()*3.280);                  
+                }else if($('#valor').val() == "cm" && $('#imp').val() == "ft"){
+                  $('#lg_v').val($('#lg').val()*0.03280);
+                  $('#a_v').val($('#a').val()*0.03280);
+                  $('#an_v').val($('#an').val()*0.03280);                  
+                }else if($('#valor').val() == "mm" && $('#imp').val() == "ft"){
+                  $('#lg_v').val($('#lg').val()*0.00328);
+                  $('#a_v').val($('#a').val()*0.00328);
+                  $('#an_v').val($('#an').val()*0.00328);                  
+                }
+
+        });    
+
   });
   
   var app = angular.module('MyApp', []);
